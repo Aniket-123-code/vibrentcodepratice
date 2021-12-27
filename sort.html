@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+              <th>Name</th><th>Surname</th><th>Age</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John</td><td>Smith</td><td>10</td>
+            </tr>
+            <tr>
+              <td>Pete</td><td>Brown</td><td>15</td>
+            </tr>
+            <tr>
+              <td>Ann</td><td>Lee</td><td>5</td>
+            </tr>
+            <tr>
+              <td>...</td><td>...</td><td>...</td>
+            </tr>
+          </tbody>
+    </table>
+    <script>
+        document.body.style.backgroundColor = prompt('background color?', 'green');
+
+
+        function showNotification({
+top = 20,
+right = 30,
+html = "default",
+className = ""
+} = {}) {
+const notEl = document.createElement("div");
+notEl.className = "notification";
+notEl.classList.add(className);
+notEl.innerHTML = html;
+notEl.style.cssText = `position: absolute;
+top: ${top}px;
+right: ${right}px;
+background-color: #ccc;
+padding: 20px;
+border-radius: 5px;
+`;
+document.body.append(notEl);
+setInterval(() => {
+notEl.hidden = !notEl.hidden;
+}, 1500);
+}
+
+showNotification({
+top: 10, // 10px from the top of the window (by default 0px)
+right: 10, // 10px from the right edge of the window (by default 0px)
+html: "Hello!", // the HTML of notification
+className: "welcome" // an additional class for the div (optional)
+});
+
+element.style.height = `${element.scrollHeight}px`;
+    </script>
+</body>
+</html>
